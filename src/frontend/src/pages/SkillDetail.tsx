@@ -23,9 +23,9 @@ export default function SkillDetail() {
 
   if (!skill) {
     return (
-      <main className="min-h-screen pt-28 pb-24 flex items-center justify-center">
+      <main className="min-h-screen pt-20 pb-10 flex items-center justify-center">
         <div className="text-center" data-ocid="skill_detail.error_state">
-          <p className="text-[#aeaeb2] text-lg mb-6">Skill not found.</p>
+          <p className="text-[#aeaeb2] text-lg mb-4">Skill not found.</p>
           <Button asChild variant="outline" className="border-white/10">
             <Link to="/">← Back to Home</Link>
           </Button>
@@ -37,14 +37,14 @@ export default function SkillDetail() {
   const paragraphs = skill.description.split("\n\n");
 
   return (
-    <main className="min-h-screen pt-28 pb-24">
+    <main className="min-h-screen pt-20 pb-10">
       <div className="max-w-4xl mx-auto px-6">
         {/* Back */}
         <Button
           asChild
           variant="ghost"
           size="sm"
-          className="text-[#aeaeb2] hover:text-white mb-8 -ml-2"
+          className="text-[#aeaeb2] hover:text-white mb-4 -ml-2"
           data-ocid="skill_detail.back_button"
         >
           <Link to="/">
@@ -57,7 +57,7 @@ export default function SkillDetail() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="rounded-3xl p-8 mb-10 relative overflow-hidden"
+          className="rounded-3xl p-6 mb-6 relative overflow-hidden"
           style={{
             background: `linear-gradient(135deg, ${skill.color}18 0%, rgba(28,28,30,0.9) 100%)`,
             border: `1px solid ${skill.color}30`,
@@ -70,7 +70,7 @@ export default function SkillDetail() {
           />
           <div className="relative">
             <div
-              className="w-12 h-12 rounded-2xl mb-6 flex items-center justify-center"
+              className="w-12 h-12 rounded-2xl mb-4 flex items-center justify-center"
               style={{
                 background: `${skill.color}20`,
                 border: `1px solid ${skill.color}40`,
@@ -84,10 +84,10 @@ export default function SkillDetail() {
                 }}
               />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
               {skill.name}
             </h1>
-            <p className="text-[#aeaeb2] text-lg mb-5">{skill.tagline}</p>
+            <p className="text-[#aeaeb2] text-lg mb-3">{skill.tagline}</p>
             <div className="flex flex-wrap gap-3">
               <span
                 className="px-3 py-1 rounded-full text-xs font-bold"
@@ -117,9 +117,9 @@ export default function SkillDetail() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mb-10"
+          className="mb-6"
         >
-          <h2 className="text-2xl font-bold mb-5 text-white">Overview</h2>
+          <h2 className="text-2xl font-bold mb-3 text-white">Overview</h2>
           <div className="glass rounded-2xl p-6 space-y-4">
             {paragraphs.map((para) => (
               <p
@@ -137,9 +137,9 @@ export default function SkillDetail() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mb-10"
+          className="mb-6"
         >
-          <h2 className="text-2xl font-bold mb-5 text-white">Use Cases</h2>
+          <h2 className="text-2xl font-bold mb-3 text-white">Use Cases</h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {skill.useCases.map((uc, i) => (
               <div
@@ -165,9 +165,9 @@ export default function SkillDetail() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mb-10"
+          className="mb-6"
         >
-          <h2 className="text-2xl font-bold mb-5 text-white">
+          <h2 className="text-2xl font-bold mb-3 text-white">
             Learning Resources
           </h2>
           <div className="space-y-3">

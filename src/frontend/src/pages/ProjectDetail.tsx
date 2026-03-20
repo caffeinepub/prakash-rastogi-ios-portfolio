@@ -27,9 +27,9 @@ export default function ProjectDetail() {
 
   if (!project) {
     return (
-      <main className="min-h-screen pt-28 pb-24 flex items-center justify-center">
+      <main className="min-h-screen pt-20 pb-10 flex items-center justify-center">
         <div className="text-center" data-ocid="project_detail.error_state">
-          <p className="text-[#aeaeb2] text-lg mb-6">Project not found.</p>
+          <p className="text-[#aeaeb2] text-lg mb-4">Project not found.</p>
           <Button asChild variant="outline" className="border-white/10">
             <Link to="/projects">← Back to Projects</Link>
           </Button>
@@ -48,14 +48,14 @@ export default function ProjectDetail() {
   const archBorder = ["40", "25", "18"];
 
   return (
-    <main className="min-h-screen pt-28 pb-24">
+    <main className="min-h-screen pt-20 pb-10">
       <div className="max-w-4xl mx-auto px-6">
         {/* Back */}
         <Button
           asChild
           variant="ghost"
           size="sm"
-          className="text-[#aeaeb2] hover:text-white mb-8 -ml-2"
+          className="text-[#aeaeb2] hover:text-white mb-4 -ml-2"
           data-ocid="project_detail.back_button"
         >
           <Link to="/projects">
@@ -65,7 +65,7 @@ export default function ProjectDetail() {
 
         {/* Hero */}
         <div
-          className="rounded-3xl p-8 mb-10 relative overflow-hidden"
+          className="rounded-3xl p-6 mb-6 relative overflow-hidden"
           style={{
             background: `linear-gradient(135deg, ${accentColor}18 0%, rgba(28,28,30,0.9) 100%)`,
             border: `1px solid ${accentColor}30`,
@@ -77,7 +77,7 @@ export default function ProjectDetail() {
           />
           <div className="relative">
             <span
-              className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4"
+              className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-3"
               style={{
                 color: categoryColors[project.category],
                 background: `${categoryColors[project.category]}18`,
@@ -85,7 +85,7 @@ export default function ProjectDetail() {
             >
               {project.category}
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
               {project.name}
             </h1>
             <p className="text-[#aeaeb2] text-lg">{project.description}</p>
@@ -93,8 +93,8 @@ export default function ProjectDetail() {
         </div>
 
         {/* Challenge */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-bold mb-4 text-white">The Challenge</h2>
+        <section className="mb-6">
+          <h2 className="text-2xl font-bold mb-3 text-white">The Challenge</h2>
           <div className="glass rounded-2xl p-6">
             <p className="text-[#aeaeb2] leading-relaxed">
               {project.challenge}
@@ -103,13 +103,13 @@ export default function ProjectDetail() {
         </section>
 
         {/* Architecture */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-bold mb-4 text-white">Architecture</h2>
+        <section className="mb-6">
+          <h2 className="text-2xl font-bold mb-3 text-white">Architecture</h2>
           <div className="glass rounded-2xl p-6">
-            <p className="text-[#aeaeb2] leading-relaxed mb-6">
+            <p className="text-[#aeaeb2] leading-relaxed mb-4">
               {project.architecture}
             </p>
-            <div className="grid grid-cols-3 gap-3 mt-4">
+            <div className="grid grid-cols-3 gap-3">
               {archLayers.map((layer, i) => (
                 <div
                   key={layer.label}
@@ -130,8 +130,8 @@ export default function ProjectDetail() {
         </section>
 
         {/* Impact */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-bold mb-4 text-white">Impact</h2>
+        <section className="mb-6">
+          <h2 className="text-2xl font-bold mb-3 text-white">Impact</h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {project.impact.map((item, i) => (
               <div
@@ -151,9 +151,9 @@ export default function ProjectDetail() {
         </section>
 
         {/* Tech Stack */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-bold mb-4 text-white">Tech Stack</h2>
-          <p className="text-[#aeaeb2] text-sm mb-4">
+        <section className="mb-6">
+          <h2 className="text-2xl font-bold mb-3 text-white">Tech Stack</h2>
+          <p className="text-[#aeaeb2] text-sm mb-3">
             Tap a technology to explore its details and learning resources.
           </p>
           <div className="flex flex-wrap gap-3">

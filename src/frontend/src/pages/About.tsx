@@ -72,11 +72,11 @@ export default function About() {
   };
 
   return (
-    <main className="min-h-screen pt-28 pb-24">
+    <main className="min-h-screen pt-20 pb-10">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
-        <div className="mb-16 slide-up">
-          <h1 className="text-5xl font-bold mb-4">
+        <div className="mb-6 slide-up">
+          <h1 className="text-5xl font-bold mb-3">
             <span className="text-gradient">About</span>{" "}
             <span className="text-gradient-blue">Prakash</span>
           </h1>
@@ -86,17 +86,17 @@ export default function About() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid lg:grid-cols-2 gap-8">
           {/* Left: Timeline + Education */}
           <div>
-            <h2 className="text-2xl font-bold mb-8 text-white">
+            <h2 className="text-2xl font-bold mb-4 text-white">
               Career Timeline
             </h2>
             <div className="relative">
               {/* Timeline line */}
               <div className="absolute left-4 top-0 bottom-0 w-px bg-white/10" />
 
-              <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-5">
                 {timeline.map((item, i) => (
                   <div
                     key={item.company}
@@ -139,7 +139,7 @@ export default function About() {
             </div>
 
             {/* Education */}
-            <h2 className="text-2xl font-bold mt-14 mb-6 text-white">
+            <h2 className="text-2xl font-bold mt-8 mb-4 text-white">
               Education
             </h2>
             <div className="glass rounded-2xl p-6">
@@ -167,9 +167,9 @@ export default function About() {
 
           {/* Right: Contact form */}
           <div>
-            <h2 className="text-2xl font-bold mb-8 text-white">Get in Touch</h2>
+            <h2 className="text-2xl font-bold mb-4 text-white">Get in Touch</h2>
 
-            <div className="flex gap-4 mb-8">
+            <div className="flex gap-4 mb-4">
               <a
                 href="https://linkedin.com/in/prakash-rastogi"
                 target="_blank"
@@ -198,12 +198,12 @@ export default function About() {
 
             {submitted ? (
               <div
-                className="glass rounded-2xl p-10 text-center"
+                className="glass rounded-2xl p-8 text-center"
                 data-ocid="about.contact.success_state"
               >
                 <CheckCircle
                   size={40}
-                  className="mx-auto mb-4"
+                  className="mx-auto mb-3"
                   style={{ color: "#30D158" }}
                 />
                 <h3 className="text-white font-bold text-xl mb-2">
@@ -212,7 +212,7 @@ export default function About() {
                 <p className="text-[#aeaeb2]">I'll respond within 24 hours.</p>
                 <Button
                   variant="ghost"
-                  className="mt-6 text-[#0A84FF]"
+                  className="mt-4 text-[#0A84FF]"
                   onClick={() => setSubmitted(false)}
                 >
                   Send another
@@ -221,7 +221,7 @@ export default function About() {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="glass rounded-2xl p-6 flex flex-col gap-5"
+                className="glass rounded-2xl p-6 flex flex-col gap-4"
                 data-ocid="about.contact.modal"
               >
                 <div className="flex flex-col gap-2">

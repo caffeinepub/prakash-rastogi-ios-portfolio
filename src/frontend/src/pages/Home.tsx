@@ -31,10 +31,10 @@ export default function Home() {
 
   return (
     <main>
-      {/* Hero — centered single column */}
+      {/* Hero — two-column layout */}
       <section
         ref={heroRef}
-        className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
+        className="relative flex items-center overflow-hidden pt-16 py-12"
         style={{
           background:
             "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(10,132,255,0.15) 0%, transparent 70%), #121212",
@@ -50,62 +50,82 @@ export default function Home() {
           }}
         />
 
-        <div className="relative max-w-3xl mx-auto px-6 text-center flex flex-col items-center slide-up">
-          <div
-            className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold mb-6 border"
-            style={{
-              color: "#0A84FF",
-              borderColor: "rgba(10,132,255,0.3)",
-              background: "rgba(10,132,255,0.08)",
-            }}
-          >
-            Available for Senior Roles
+        <div className="relative max-w-6xl mx-auto px-6 w-full flex items-center justify-between gap-8 slide-up">
+          {/* Left: text content */}
+          <div className="flex-1 max-w-xl flex flex-col items-start text-left">
+            <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-3">
+              Crafting iOS
+              <br />
+              <span className="text-gradient-blue">Experiences</span>
+              <br />
+              That Scale
+            </h1>
+
+            <p className="text-[#aeaeb2] text-lg mb-1 font-medium">
+              Prakash Kumar Rastogi
+            </p>
+            <p className="text-[#aeaeb2] text-base mb-4 max-w-lg leading-relaxed">
+              Senior iOS Architect with 14+ years building apps for 20M+ users.
+              Specializing in performance engineering, SwiftUI, and system-scale
+              architecture.
+            </p>
+
+            <div className="flex flex-wrap gap-4 mb-3">
+              <Button
+                asChild
+                className="gap-2 font-semibold"
+                style={{ background: "#0A84FF" }}
+                data-ocid="home.primary_button"
+              >
+                <Link to="/projects">
+                  View My Work <ArrowRight size={16} />
+                </Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="border-white/10 text-white hover:bg-white/5"
+                data-ocid="home.secondary_button"
+              >
+                <Link to="/about">Get in Touch</Link>
+              </Button>
+            </div>
+
+            <div
+              className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold border"
+              style={{
+                color: "#0A84FF",
+                borderColor: "rgba(10,132,255,0.3)",
+                background: "rgba(10,132,255,0.08)",
+              }}
+            >
+              Available for Senior Roles
+            </div>
           </div>
 
-          <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            Crafting iOS
-            <br />
-            <span className="text-gradient-blue">Experiences</span>
-            <br />
-            That Scale
-          </h1>
-
-          <p className="text-[#aeaeb2] text-lg mb-3 font-medium">
-            Prakash Kumar Rastogi
-          </p>
-          <p className="text-[#aeaeb2] text-base mb-8 max-w-lg leading-relaxed">
-            Senior iOS Architect with 14+ years building apps for 20M+ users.
-            Specializing in performance engineering, SwiftUI, and system-scale
-            architecture.
-          </p>
-
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Button
-              asChild
-              className="gap-2 font-semibold"
-              style={{ background: "#0A84FF" }}
-              data-ocid="home.primary_button"
-            >
-              <Link to="/projects">
-                View My Work <ArrowRight size={16} />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="border-white/10 text-white hover:bg-white/5"
-              data-ocid="home.secondary_button"
-            >
-              <Link to="/about">Get in Touch</Link>
-            </Button>
+          {/* Right: profile image */}
+          <div
+            className="hidden lg:block flex-shrink-0 w-80 h-96 rounded-2xl overflow-hidden"
+            style={{
+              border: "1px solid rgba(255,255,255,0.12)",
+              boxShadow:
+                "0 0 40px rgba(10,132,255,0.15), 0 20px 60px rgba(0,0,0,0.5)",
+            }}
+          >
+            <img
+              src="/assets/uploads/Screenshot-2026-03-21-at-12.35.59-AM-1.png"
+              alt="Prakash Kumar Rastogi"
+              className="w-full h-full object-cover"
+              style={{ objectPosition: "right top" }}
+            />
           </div>
         </div>
       </section>
 
       {/* Selected Work — horizontal scroll strip */}
-      <section className="py-16 border-b border-white/5">
+      <section className="py-8 border-b border-white/5">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-baseline justify-between mb-6">
+          <div className="flex items-baseline justify-between mb-4">
             <div>
               <p
                 className="text-xs font-semibold tracking-widest uppercase mb-1"
@@ -147,7 +167,7 @@ export default function Home() {
                 >
                   {/* Accent bar */}
                   <div
-                    className="w-full h-1 rounded-full mb-4"
+                    className="w-full h-1 rounded-full mb-3"
                     style={{ background: project.color }}
                   />
                   <p className="text-white font-semibold text-sm leading-snug mb-2">
@@ -175,12 +195,12 @@ export default function Home() {
       </section>
 
       {/* Stats */}
-      <section className="py-20 border-b border-white/5">
+      <section className="py-8 border-b border-white/5">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="text-4xl font-bold text-gradient-blue mb-2">
+                <p className="text-4xl font-bold text-gradient-blue mb-1">
                   {stat.value}
                 </p>
                 <p className="text-[#aeaeb2] text-sm">{stat.label}</p>
@@ -191,10 +211,10 @@ export default function Home() {
       </section>
 
       {/* Skills grid — clickable */}
-      <section className="py-24">
+      <section className="py-8">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-3">Core Expertise</h2>
-          <p className="text-[#aeaeb2] mb-12">
+          <h2 className="text-3xl font-bold mb-2">Core Expertise</h2>
+          <p className="text-[#aeaeb2] mb-6">
             The technologies I work with daily — click to explore
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">

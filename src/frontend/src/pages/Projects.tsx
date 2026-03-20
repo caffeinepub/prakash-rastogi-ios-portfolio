@@ -27,11 +27,11 @@ export default function Projects() {
     filter === "All" ? projects : projects.filter((p) => p.category === filter);
 
   return (
-    <main className="min-h-screen pt-28 pb-24">
+    <main className="min-h-screen pt-20 pb-10">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
-        <div className="mb-12 slide-up">
-          <h1 className="text-5xl font-bold mb-4">
+        <div className="mb-6 slide-up">
+          <h1 className="text-5xl font-bold mb-3">
             <span className="text-gradient">Selected</span>
             <br />
             <span className="text-gradient-blue">Work</span>
@@ -43,7 +43,7 @@ export default function Projects() {
         </div>
 
         {/* Filters */}
-        <div className="flex flex-wrap gap-3 mb-12" data-ocid="projects.tab">
+        <div className="flex flex-wrap gap-3 mb-6" data-ocid="projects.tab">
           {categories.map((cat) => (
             <button
               type="button"
@@ -89,7 +89,7 @@ export default function Projects() {
 
               <div className="p-6 flex flex-col flex-1">
                 {/* Category badge */}
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-3">
                   <span
                     className="px-2.5 py-1 rounded-full text-xs font-semibold"
                     style={{
@@ -105,12 +105,12 @@ export default function Projects() {
                 <h3 className="text-white font-bold text-xl mb-2">
                   {project.name}
                 </h3>
-                <p className="text-[#aeaeb2] text-sm leading-relaxed mb-4 flex-1">
+                <p className="text-[#aeaeb2] text-sm leading-relaxed mb-3 flex-1">
                   {project.description}
                 </p>
 
                 {/* Tech tags */}
-                <div className="flex flex-wrap gap-1.5 mb-5">
+                <div className="flex flex-wrap gap-1.5 mb-4">
                   {project.techStack.slice(0, 4).map((tech) => (
                     <Badge
                       key={tech}
@@ -135,7 +135,7 @@ export default function Projects() {
 
         {filtered.length === 0 && (
           <div
-            className="text-center py-20 text-[#aeaeb2]"
+            className="text-center py-12 text-[#aeaeb2]"
             data-ocid="projects.empty_state"
           >
             No projects in this category yet.

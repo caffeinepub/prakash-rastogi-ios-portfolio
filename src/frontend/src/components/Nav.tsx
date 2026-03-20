@@ -64,16 +64,8 @@ export default function Nav() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo - PKR removed, replaced with initials only as a subtle brand */}
-        <Link
-          to="/"
-          className="text-xl font-bold tracking-wider text-white"
-          data-ocid="nav.link"
-        >
-          <span className="text-white opacity-80 text-base font-semibold tracking-widest">
-            P·R
-          </span>
-        </Link>
+        {/* Left slot - empty */}
+        <div className="w-8" />
 
         {/* Desktop nav */}
         <ul className="hidden md:flex items-center gap-8">
@@ -127,7 +119,6 @@ export default function Nav() {
                 </Link>
               </li>
             ))}
-            {/* Show clock in mobile menu too */}
             <li className="pt-2 border-t border-white/10">
               <MobileClock />
             </li>
