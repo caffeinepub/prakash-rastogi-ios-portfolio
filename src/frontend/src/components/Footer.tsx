@@ -10,11 +10,6 @@ export default function Footer() {
   return (
     <footer className="border-t border-white/5 py-10">
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-        <div className="flex items-center gap-6">
-          <span className="text-xl font-bold text-gradient-blue">PKR</span>
-          <span className="text-[#aeaeb2] text-sm">Senior iOS Architect</span>
-        </div>
-
         <div className="flex items-center gap-4">
           <a
             href="https://github.com"
@@ -35,7 +30,6 @@ export default function Footer() {
             <SiLinkedin size={18} />
           </a>
         </div>
-
         <p className="text-[#aeaeb2] text-xs">
           © {year}. Built with ❤️ using{" "}
           <a

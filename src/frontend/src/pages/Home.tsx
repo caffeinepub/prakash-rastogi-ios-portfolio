@@ -103,7 +103,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right: profile image */}
+          {/* Right: profile image — center aligned */}
           <div
             className="hidden lg:block flex-shrink-0 w-80 h-96 rounded-2xl overflow-hidden"
             style={{
@@ -116,7 +116,7 @@ export default function Home() {
               src="/assets/uploads/Screenshot-2026-03-21-at-12.35.59-AM-1.png"
               alt="Prakash Kumar Rastogi"
               className="w-full h-full object-cover"
-              style={{ objectPosition: "right top" }}
+              style={{ objectPosition: "center top" }}
             />
           </div>
         </div>
