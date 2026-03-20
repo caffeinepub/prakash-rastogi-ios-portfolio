@@ -50,7 +50,7 @@ export default function Home() {
           }}
         />
 
-        <div className="relative max-w-6xl mx-auto px-6 w-full flex items-center justify-between gap-8 slide-up">
+        <div className="relative max-w-6xl mx-auto px-6 w-full flex items-center justify-between gap-4 slide-up">
           {/* Left: text content */}
           <div className="flex-1 max-w-xl flex flex-col items-start text-left">
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-3">
@@ -70,7 +70,8 @@ export default function Home() {
               architecture.
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-3">
+            {/* Buttons + Available badge — horizontal row */}
+            <div className="flex flex-wrap items-center gap-4">
               <Button
                 asChild
                 className="gap-2 font-semibold"
@@ -89,23 +90,22 @@ export default function Home() {
               >
                 <Link to="/about">Get in Touch</Link>
               </Button>
-            </div>
-
-            <div
-              className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold border"
-              style={{
-                color: "#0A84FF",
-                borderColor: "rgba(10,132,255,0.3)",
-                background: "rgba(10,132,255,0.08)",
-              }}
-            >
-              Available for Senior Roles
+              <div
+                className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold border"
+                style={{
+                  color: "#0A84FF",
+                  borderColor: "rgba(10,132,255,0.3)",
+                  background: "rgba(10,132,255,0.08)",
+                }}
+              >
+                Available for Senior Roles
+              </div>
             </div>
           </div>
 
           {/* Right: profile image — center aligned */}
           <div
-            className="hidden lg:block flex-shrink-0 w-80 h-96 rounded-2xl overflow-hidden"
+            className="hidden lg:flex flex-shrink-0 w-80 h-96 rounded-2xl overflow-hidden items-center justify-center"
             style={{
               border: "1px solid rgba(255,255,255,0.12)",
               boxShadow:
@@ -116,7 +116,7 @@ export default function Home() {
               src="/assets/uploads/Screenshot-2026-03-21-at-12.35.59-AM-1.png"
               alt="Prakash Kumar Rastogi"
               className="w-full h-full object-cover"
-              style={{ objectPosition: "center top" }}
+              style={{ objectPosition: "center center" }}
             />
           </div>
         </div>
