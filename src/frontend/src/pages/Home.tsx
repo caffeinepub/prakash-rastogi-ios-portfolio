@@ -50,10 +50,13 @@ export default function Home() {
           }}
         />
 
-        <div className="relative max-w-6xl mx-auto px-6 w-full flex items-center justify-between gap-4 slide-up">
-          {/* Left: text content */}
-          <div className="flex-1 max-w-xl flex flex-col items-start text-left">
-            <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-3">
+        <div className="relative max-w-6xl mx-auto px-6 w-full flex items-center gap-5 slide-up">
+          {/* Left: text content — stretches to fill available space, min gap 20px from image */}
+          <div className="flex-1 min-w-0 flex flex-col items-start text-left">
+            <h1
+              className="w-full font-bold leading-[1.05] mb-3"
+              style={{ fontSize: "clamp(3rem, 7vw, 6rem)" }}
+            >
               Crafting iOS
               <br />
               <span className="text-gradient-blue">Experiences</span>
@@ -64,7 +67,7 @@ export default function Home() {
             <p className="text-[#aeaeb2] text-lg mb-1 font-medium">
               Prakash Kumar Rastogi
             </p>
-            <p className="text-[#aeaeb2] text-base mb-4 max-w-lg leading-relaxed">
+            <p className="text-[#aeaeb2] text-base mb-4 leading-relaxed">
               Senior iOS Architect with 14+ years building apps for 20M+ users.
               Specializing in performance engineering, SwiftUI, and system-scale
               architecture.
@@ -103,7 +106,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right: profile image — center aligned */}
+          {/* Right: profile image — center aligned, fixed size */}
           <div
             className="hidden lg:flex flex-shrink-0 w-80 h-96 rounded-2xl overflow-hidden items-center justify-center"
             style={{
